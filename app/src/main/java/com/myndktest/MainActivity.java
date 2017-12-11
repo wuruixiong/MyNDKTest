@@ -1,10 +1,16 @@
 package com.myndktest;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -23,7 +29,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 TextView tv = (TextView) findViewById(R.id.sample_text);
-                tv.setText(myStringFromJNI());
+                //tv.setText(myStringFromJNI());
+                tv.setText(myIntFromJNI() + "");
             }
         });
 
@@ -39,4 +46,7 @@ public class MainActivity extends Activity {
     public native String stringFromJNI();
 
     public native String myStringFromJNI();
+
+    public native int myIntFromJNI();
+
 }
