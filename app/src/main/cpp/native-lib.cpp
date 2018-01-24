@@ -4,6 +4,8 @@
 
 extern "C" { //告诉编译器，这部分代码按C语言的格式进行编译，而不是C++的
 
+// 需要在 CMakeLists.txt 文件中配置，需要在使用的类中配置System.loadLibrary
+// build/intermediates/cmake/ 下会生成对应的 .so 文件
 
 // 在Jni编程中所有本地语言实现Jni接口的方法前面都有一个"JNIEXPORT",这个可以看做是Jni的一个标志，至今为止没发现它有什么特殊的用处。
 // 下面这行代码 可以只写jstring，不写JNIEXPORT
