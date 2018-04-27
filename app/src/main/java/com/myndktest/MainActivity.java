@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("my-test-native-lib");
+        System.loadLibrary("native-lib");
     }
 
     @Override
@@ -48,5 +49,7 @@ public class MainActivity extends Activity {
     public native String myStringFromJNI2();
 
     public native int myIntFromJNI2();
+
+    public native int myIntFromJNI();
 
 }

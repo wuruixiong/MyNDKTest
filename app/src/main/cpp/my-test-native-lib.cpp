@@ -4,11 +4,13 @@
 
 extern "C" {
 
+int counter = 0;
+
 JNIEXPORT jstring
 JNICALL
 Java_com_myndktest_MainActivity_stringFromJNI2(
         JNIEnv *env,
-        jobject ) {
+        jobject) {
     std::string hello = "Hello 2 from C++";
     return env->NewStringUTF(hello.c_str());
 }
@@ -28,7 +30,8 @@ JNICALL
 Java_com_myndktest_MainActivity_myIntFromJNI2(
         JNIEnv *env,
         jobject) {
-    return 102;
+    counter++;
+    return counter;
 }
 
 }
